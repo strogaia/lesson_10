@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>User class Example</title>
+    <link href="user.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="pro"></div>
+    
+    <script>
+        class User {
+            constructor(name, ava, webAdress, password, dateReg ){
+                this.name = name;
+                this.ava = ava;
+                this.webAdress = webAdress;
+                this.password = password;
+                this.dateReg = dateReg;
+            }
+            
+            render(){
+                var text = "";
+                var profil = document.getElementById("pro");
+                profil.innerHTML += `<div
+                <h2> ${this.name} - username (${this.webAdress} - email)</h2> <br>
+                <img src="${this.ava}" - avatar /> <br>
+                <p>user has registered ${this.dateReg} - period() - days ago</p>
+                </div>`;
+            }
+        }
+
+        let user1 = new User("Stas", "images/hqdefault.jpg", "angel@mail.ru", "liusha32", "3 august 2019" );
+        let user2 = new User("Iulia", "images/user2.jpg", "iuly@mail.ru", "mypass89", "5 august 2019" );
+        let user3 = new User("Roman", "images/user3.jpg", "goodboy@mail.ru", "cool2008", "7 august 2019" );
+
+        user1.render();
+        user2.render();
+        user3.render();
+    </script>
+</body>
+
+</html>
